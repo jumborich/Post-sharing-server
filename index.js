@@ -40,6 +40,10 @@ app.use("/users", userRoutes)
 app.use("/posts", postRoutes);
 app.use("/comments", commentRoutes);
 
+// Catch-all route
+app.all("*", (req, res, next) => {
+  res.status(404).send("Page Not Found!!");
+})
 
 // Error handler middleware
 app.use(errorHandler);
