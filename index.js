@@ -11,17 +11,12 @@ const commentRoutes = require("./routes/Comments");
 const authRoutes = require("./routes/Auth");
 const { protectRoutes } = require("./controllers/auth");
 
-
 // Create app
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Enable CORS
-app.use(cors({
-  // origin:process.env.ORIGIN,
-  // credentials:true,
-  // allowedHeaders:"Content-Type, Authorization, X-Requested-With",
-}));
+app.use(cors());
 
 // Parse cookies to req.cookies
 app.use(cookieParser());
